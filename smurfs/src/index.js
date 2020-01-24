@@ -18,7 +18,7 @@ import "./index.css";
 // Use createStore() and pass it the reducer and applyMiddleware, passing thunk and logger in applyMiddleware (logger must be passed last)
 
 const store = createStore(reducer, applyMiddleware(thunk, logger));
-console.log("This is store in src/index.js: ", store);
+// console.log("This is store in src/index.js: ", store);
 
 ReactDOM.render(
   <Provider store={store}>

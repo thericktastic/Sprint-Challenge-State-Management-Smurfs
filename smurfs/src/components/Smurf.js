@@ -6,6 +6,7 @@ const Smurf = props => {
   return (
     <div>
       <p>Smurf's name: {props.smurf.name}</p>
+      <p>{props.smurf.name} is {props.smurf.age} years old</p>
     </div>
   );
 };

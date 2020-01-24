@@ -7,7 +7,7 @@ const initialState = {
   error: ""
 };
 
-console.log("This is initialState in reducers/index.js: ", initialState);
+// console.log("This is initialState in reducers/index.js: ", initialState);
 
 // Reducers will throw an error if 'action' is anything but an object
 export const reducer = (state = initialState, action) => {
@@ -22,6 +22,18 @@ export const reducer = (state = initialState, action) => {
         ...state,
         isLoading: false,
         smurfs: action.payload
+      };
+    case "PUTTING_SMURFS_START":
+      return {
+        ...state,
+        isLoading: true
+      };
+    case "PUTTING_SMURFS_SUCCESS":
+      console.log("This is action.payload: ", action.payload);
+      return {
+        ...state,
+        isLoading: false,
+        smurfs: [...state.smurfs, action.payload]
       };
     default:
       return state;
